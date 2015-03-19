@@ -1,7 +1,4 @@
-% see http://davidstutz.de/matrix-decompositions/matrix-decompositions/householder
-% for householder algorithm description
-
-function [ Q, R, dA ] = qr_fact_househ( A )
+function [ Q, R, dA ] = qr_fact_givens( A )
     [nrow, ~] = size(A);
     
     Q = eye(nrow);
