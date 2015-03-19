@@ -1,7 +1,12 @@
 % lu_fact: factorizes n x n matrix A into L, U matricies
-function [L, U, dA] = lu_fact(A, n)
+function [L, U, dA] = lu_fact(A)
+    [m, n] = size(A);
     I = eye(n);                                                             % n x n identity matrix
     A_orig = A;                                                             % save A
+    
+    if m ~= n                                                               % check square
+        error('Not square matrix');
+    end
     
     for k = 1:n-1                                                           % for each row k
         if A(k, k) == 0                                                     %   check that a pivot exists
@@ -19,4 +24,5 @@ function [L, U, dA] = lu_fact(A, n)
     L = I + tril(A, -1);                                                    %   L E1^-1 E2^-1 E3^-1 which is what is saved below the diagonal
     U = triu(A);                                                            %   U = E3 E2 E1 A (transformed A)
     
-    dA = normInf(matrix_mult(L, U) - A_orig);                               %   calculate dA
+    dA = calc_error(matrix_mult(L, U), A_orig);
+end

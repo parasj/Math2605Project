@@ -1,6 +1,4 @@
-function [ A ] = matrix_mult( a, b )
-    A = a * b;
-    
+function [ result ] = matrix_mult( a, b )    
     [ar, ac] = size(a);     % a rows, columns
     [br, bc] = size(b);     % b rows, columns
     
