@@ -10,7 +10,7 @@ function [L, U, dA] = lu_fact(A)
     
     for k = 1:n-1                                                           % for each row k
         if A(k, k) == 0                                                     %   check that a pivot exists
-            error('Cannot complete LU factorization');
+            error('Cannot complete LU factorization, no pivot in position %d', k);
         end
         
         for i = k+1:n                                                       %   for the subsequent rows after k                                      
