@@ -1,6 +1,6 @@
 function [ ] = runHilbertSolution( a, b )
 
-fileID = fopen('hilbert_partd.txt','w');
+fileID = fopen('../written/hilbert_partd.txt','w');
 
 plot_x = a : b;
 plot_dBQR = zeros(b - a, 1);
