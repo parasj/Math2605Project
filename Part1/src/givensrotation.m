@@ -1,17 +1,16 @@
-function [c,s] = givensrotation(a,b)
-  if b == 0
-    c = 1;
-    s = 0;
-  else
-    if abs(b) > abs(a)
-      r = a / b;
-      s = 1 / sqrt(1 + r^2);
-      c = s*r;
-    else
-      r = b / a;
-      c = 1 / sqrt(1 + r^2);
-      s = c*r;
-    end
-  end
+function [ G ] = givensrotation(x, nrow, row, col)
+    a = x(1);
+    b = x(2);
 
+    r = sqrt( a * a + b * b );
+    sine = -1 * b / r;
+    cosine = a / r;
+
+
+    G = eye(nrow);
+
+    G(row, row) = cosine;
+    G(col, col) = cosine;
+    G(col, row) = -sine;
+    G(row, col) = sine;
 end
