@@ -8,6 +8,6 @@ y = solve_forward_sub(L, b);
 % Solve UX = Y w/ backward substitution
 x = solve_backward_sub(U, y);
 
-dB = calc_error(matrix_mult(A, x), b);
+dB = vector_norm(matrix_mult(A, x) - b);
 
 end

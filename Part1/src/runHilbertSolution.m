@@ -62,8 +62,8 @@ xlabel('n') % y-axis label
 
 subplot(3,2,4);
 scatter(plot_x, plot_dQR, 100, 'filled')
-title('||QR-H||_{inf} with Householders')
-ylabel('||QR-H||_{inf}') % x-axis label
+title('||QR-H||_{\infty} with Householders')
+ylabel('||QR-H||_{\infty}') % x-axis label
 xlabel('n') % y-axis label
 
 
@@ -75,8 +75,8 @@ xlabel('n') % y-axis label
 
 subplot(3,2,6);
 scatter(plot_x, plot_dQRgivens, 100, 'filled')
-title('||QR-H||_{inf} with Givens')
-ylabel('||QR-H||_{inf}') % x-axis label
+title('||QR-H||_{\infty} with Givens')
+ylabel('||QR-H||_{\infty}') % x-axis label
 xlabel('n') % y-axis label
 
 
@@ -88,8 +88,8 @@ xlabel('n') % y-axis label
 
 subplot(3,2,2);
 scatter(plot_x, plot_dLU, 100, 'filled')
-title('||LU-H||_{inf}')
-ylabel('||LU-H||_{inf}') % x-axis label
+title('||LU-H||_{\infty}')
+ylabel('||LU-H||_{\infty}') % x-axis label
 xlabel('n') % y-axis label
 
 end
