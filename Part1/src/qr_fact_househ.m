@@ -11,7 +11,7 @@ function [ Q, R, dA ] = qr_fact_househ( A )
         v = zeros(nrow, 1);
         v(k:nrow, 1) = R(k:nrow, k);
         
-        v(k) = v(k) + vector_norm(v);
+        v(k) = v(k) - vector_norm(v);
         
         if norm(v) ~= 0
             v = v / vector_norm(v);
