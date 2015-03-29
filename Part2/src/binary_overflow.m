@@ -7,3 +7,4 @@ function [ A ] = binary_overflow( A )
     end
 end
 
+% mod(a1 * [1 0 1 1 0]', 2)

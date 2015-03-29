@@ -58,7 +58,7 @@ subplot(3,2,3);
 scatter(plot_x, plot_dBQR, 100, 'filled')
 set(gca,'yscale','log')
 title('log plot of ||Hx_{sol}-b|| for QR Householders')
-ylabel('log(||Hx_{sol}-b||)') % x-axis label
+ylabel('||Hx_{sol}-b||') % x-axis label
 xlabel('n') % y-axis label
 
 subplot(3,2,4);
@@ -72,7 +72,7 @@ subplot(3,2,5);
 scatter(plot_x, plot_dBQRgivens, 100, 'filled')
 set(gca,'yscale','log')
 title('log plot of ||Hx_{sol}-b|| for QR Givens')
-ylabel('log(||Hx_{sol}-b||)') % x-axis label
+ylabel('||Hx_{sol}-b||') % x-axis label
 xlabel('n') % y-axis label
 
 subplot(3,2,6);
@@ -86,7 +86,7 @@ subplot(3,2,1);
 scatter(plot_x, plot_dBLU, 100, 'filled')
 set(gca,'yscale','log')
 title('log plot of ||Hx_{sol}-b|| for LU')
-ylabel('log(||Hx_{sol}-b||)') % x-axis label
+ylabel('||Hx_{sol}-b||') % x-axis label
 xlabel('n') % y-axis label
 
 subplot(3,2,2);
