@@ -8,3 +8,5 @@ y0'
 y1'
 
 y  = create_encoded_word(y0, y1)
+
+[x_1, x_2] = decode_word(y)
