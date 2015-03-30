@@ -14,7 +14,8 @@ for i = a:b
     fprintf(fileID, 'n = %d:\n', i);
     
     [A, b] = hilbert(i);
-    [x, dLU, dB] = solve_lu_b(A, b);
+    Ab = [A, b];
+    [x, dLU, dB] = solve_lu_b(Ab);
     plot_dBLU(i - a + 1) = dB;
     plot_dLU(i - a + 1) = dLU;
     
@@ -26,7 +27,7 @@ for i = a:b
     fprintf(fileID, '\t||Hx_sol-b|| = %d \n', dB);
     
     [A, b] = hilbert(i);
-    [x, dQR, dB] = solve_qr_b(A, b);
+    [x, dQR, dB] = solve_qr_b_househ(A, b);
     plot_dBQR(i - a + 1) = dB;
     plot_dQR(i - a + 1) = dQR;
     

@@ -24,4 +24,3 @@ function [ Q, R, dA ] = qr_fact_househ( A )
     
     dA = calc_error(matrix_mult(Q, R), A);
 end
-

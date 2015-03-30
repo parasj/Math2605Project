@@ -8,7 +8,7 @@ function [ Q, R, dA ] = qr_fact_givens( A )
     R = A;         % R = G3  G2  G1  A
     
     for col = 1 : ncol
-        for row = nrow : -1 : col + 1
+        for row = nrow : -1 : col + 1                   % backwards
             x = zeros(2, 1);
             x(1) = R(col, col);
             x(2) = R(row, col);

@@ -1,4 +1,3 @@
-% lu_fact: factorizes n x n matrix A into L, U matricies
 function [L, U, dA] = lu_fact(A)
     [m, n] = size(A);
     I = eye(n);                                                             % n x n identity matrix
