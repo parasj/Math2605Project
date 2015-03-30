@@ -1,2 +1,0 @@
-1. Program power_method:
-The input for your program will be an n×n matrix A, an error tolerance tol, and an initial approximation vector u0. The output should be the approximated eigenvalue λ and approximated eigenvector v and the number of iterations needed to achieve the desired error tolerance. Or, the program should report that the method doesn’t converge after a fixed number of iterations.
