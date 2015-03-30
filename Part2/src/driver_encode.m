@@ -9,6 +9,8 @@ y1'
 
 y            = create_encoded_word(y0, y1)
 
-[x_1, x_2]   = decode_word(y)
+[y_1, y_2]   = decode_word(y)
 [a_0, a_1]   = create_transformation_matrix(5)
 
+% gauss-seidel
+% jacobi
