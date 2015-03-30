@@ -1,6 +1,5 @@
-function [ n ] = jacobi( Ab, x0, tol )
-   [n, ~] = size(Ab)
-   b = Ab(n + 1, 1:n);
-   A = Ab(1:n, 1:n);
-   
+function [its] = jacobi(A, x0, tol)
+
+
 end
+
