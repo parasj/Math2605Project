@@ -12,7 +12,6 @@ function [its] = jacobi(A, x0, tol)
         while y <= col
             x = y;
             S(x,y) = 1/D(x,y);
-            x = x+1;
             y = y+1;
         end
         T = -1 * L - U;

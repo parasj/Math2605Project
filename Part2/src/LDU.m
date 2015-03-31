@@ -1,4 +1,6 @@
 function [L,D,U] = LDU( A )
+%Pulls out the upper lower triangular, diagonal and upper triagnular
+%of a given matrix A
 [row, col] = size(A);
 y = 1;
 L = zeros(row,col);
