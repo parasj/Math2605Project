@@ -1,6 +1,6 @@
 [filename, pathname] = uigetfile('*.dat', 'qr_fact_househ: Select an n x n matrix to load');
 fileloc = strcat(pathname, filename);
-matrix = importdata(fileloc)
+matrix = importdata(fileloc);
 
 [m, n] = size(matrix);
 
