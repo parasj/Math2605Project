@@ -1,9 +1,10 @@
-function [its] = gauss_seidel(A, x0, tol)
-    b = A[:,end];
+function [its, sol] = gauss_seidel(A, x0, tol)
+    b = A(:,end);
     A(:,end) = [];
     its = 0;
 
-    delta = normInf(x0);
+    delta = Inf;
+    xn = x0;
     while ((delta > tol) && (its <= 100))
         [L, D, U] = LDU(A);
         S = L + D;
@@ -13,10 +14,9 @@ function [its] = gauss_seidel(A, x0, tol)
         delta = normInf(xn - oldxn);
         its = its+1;
     end
-    if iterations > 101
+    sol = xn;
+    if its > 101
        error('Did not converge in 100 iterations');
-    else
-        print ('Converged in ' + its + ' iterations');
     end
    
 end

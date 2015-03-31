@@ -20,7 +20,6 @@ D = zeros(row,col);
 while y <= col
     x = y;
     D(x,y) = A(x,y);
-    x = x+1;
     y = y+1;
 end
 
