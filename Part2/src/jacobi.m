@@ -8,7 +8,9 @@ function [its] = jacobi(A, x0, tol)
         [L, D, U] = LDU(A);
         S = D;
         T = -1 * L - U;
+        oldxn = xn;
         xn = matrix_mult(S', matrix_mult(T, xn)) + matrix_mult(S', b);
+        delta = norm(xn - oldxn);
         its = its+1;
     end
     if iterations > 101
