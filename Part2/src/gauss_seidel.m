@@ -10,7 +10,7 @@ function [its] = gauss_seidel(A, x0, tol)
         T = -1 * U;
         oldxn = xn;
         xn = solve_forward_sub(S, (matrix_mult(T, xn) + b));
-        delta = norm(xn - oldxn);
+        delta = normInf(xn - oldxn);
         its = its+1;
     end
     if iterations > 101
