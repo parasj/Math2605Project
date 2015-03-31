@@ -9,11 +9,13 @@ function [its] = jacobi(A, x0, tol)
         S = D;
         T = -1 * L - U;
         xn = matrix_mult(S', matrix_mult(T, xn)) + matrix_mult(S', b);
+        its = its+1;
     end
     if iterations > 101
        error('Did not converge in 100 iterations');
-    end
     else
-        print ('Converged 
+        print ('Converged in ' + its + ' iterations');
+    end
+   
 end
 
