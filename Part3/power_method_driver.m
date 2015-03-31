@@ -4,6 +4,8 @@ A = importdata(fileloc);
 [filename2, pathname2] = uigetfile('*.dat', 'power_method: Select an n x 1 vector to load');
 fileloc2 = strcat(pathname2, filename2);
 vec = importdata(fileloc2);
+input = inputdlg('Enter tol, the tolerance of the power method', 'Tolerance');
+tol = str2num(input{1});
 
 [m, n] = size(A);
 
