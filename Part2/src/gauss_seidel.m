@@ -3,7 +3,7 @@ function [its] = gauss_seidel(A, x0, tol)
     A(:,end) = [];
     its = 0;
 
-    delta = x0;
+    delta = normInf(x0);
     while ((delta > tol) && (its <= 100))
         [L, D, U] = LDU(A);
         S = L + D;

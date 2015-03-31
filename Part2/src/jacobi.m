@@ -4,7 +4,7 @@ function [its] = jacobi(A, x0, tol)
     [~, col] = size(A);
     its = 0;
 
-    delta = x0;
+    delta = normInf(x0);
     while ((delta > tol) && (its <= 100))
         [L, D, U] = LDU(A);
         S = D;
