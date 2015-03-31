@@ -1,6 +1,8 @@
 1. lu_fact:
-	To run lu_fact, type 'lu_fact(loadDatFile("file.dat"))' into the Matlab console. Replace file.dat with whichever dat file you desire to pass in.
+	To test the lu_fact, run driver_lu_fact in the Matlab shell.
 
-	lu_fact also takes Matlab matricies in directly.
+	It will prompt you for an input .dat file and print L, U and the LU error out to the Matlab shell.
+
+	The lu_fact function takes in a Matlab matrix as an argument if you wish to test it directly.
 
 2. 
