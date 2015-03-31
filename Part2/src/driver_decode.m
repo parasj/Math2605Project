@@ -10,8 +10,8 @@ y = importdata(fileloc);
 
 key = questdlg( 'Which method should be to solve Ax=b?', 'Decode', 'Jacobi', 'Gauss-Seidel', 'Gauss-Seidel');
  
-y_0 = [y0]';
-y_1 = [y1]';
+y_0 = [y0 0 0 0]';
+y_1 = [y1 0 0 0]';
 
 switch key
     case 'Jacobi'
@@ -35,4 +35,4 @@ if (x0 ~= x1)
 end
 
 x0 = mod(x0, 2);
-x = x0(1 : end)'
+x = x0(1 : end - 6)'
