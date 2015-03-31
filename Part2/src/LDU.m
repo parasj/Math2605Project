@@ -24,7 +24,7 @@ while y <= col
 end
 
 U = zeros(row,col);
-x = 1
+x = 1;
 while x<=row-1
    y = x + 1;
    temp = zeros(1, col);

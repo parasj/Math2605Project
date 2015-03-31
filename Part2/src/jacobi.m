@@ -12,12 +12,15 @@ function [its, sol] = jacobi(A, x0, tol)
         y = 1;
         while y <= col
             x = y;
-            S(x,y) = 1/D(x,y);
+            if (D(x,y) ~= 0)
+                S(x,y) = 1/D(x,y);
+            end
             y = y+1;
         end
         T = -1 * L - U;
         oldxn = xn;
-        xn = matrix_mult(S, matrix_mult(T, xn)) + matrix_mult(S, b);
+        %xn = matrix_mult(S, matrix_mult(T, xn)) + matrix_mult(S, b);
+        xn = S* (T *xn) + S* b;
         delta = normInf(xn - oldxn);
         its = its+1;
     end
