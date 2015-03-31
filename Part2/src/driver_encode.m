@@ -1,22 +1,11 @@
-x = [1 0 1 1 0];
-[a0, a1] = create_transformation_matrix(5)
+input = inputdlg('Enter n, the size of the input stream', 'Encoding Driver');
 
-y0 = mod(a0 * x', 2);
-y1 = mod(a1 * x', 2);
+n = str2num(input{1});
 
-y0'
-y1'
+x = generate_rand_binary_stream(n);
+[a0, a1] = create_transformation_matrix(n);
+y0 = mod(matrix_mult(a0, x'), 2);
+y1 = mod(matrix_mult(a1, x'), 2);
+y = create_encoded_word(y0, y1);
 
-<<<<<<< HEAD
-y  = create_encoded_word(y0, y1)
-
-[x_1, x_2] = decode_word(y)
-=======
-y            = create_encoded_word(y0, y1)
-
-[y_1, y_2]   = decode_word(y)
-[a_0, a_1]   = create_transformation_matrix(5)
-
-% gauss-seidel
-% jacobi
->>>>>>> 345dbf692fefa946ec459dbece9236aea166e2b5
+h = msgbox({strcat('x: ', mat2str(x)), '',strcat('y: ', mat2str(y))}, 'Encoding Driver');
