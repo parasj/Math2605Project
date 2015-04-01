@@ -7,18 +7,18 @@ function [its, sol] = jacobi(Ab, x0, tol)
 
     delta = Inf;
     xn = x0;
-    while ((delta > tol) && (its <= 100))
-        [L, D, U] = LDU(A);
-        S = D;
-        y = 1;
-        while y <= col
-            x = y;
-            if (D(x,y) ~= 0)
-                S(x,y) = 1/D(x,y);
-            end
-            y = y+1;
+    [L, D, U] = LDU(A);
+    S = D;
+    y = 1;
+    while y <= col
+        x = y;
+        if (D(x,y) ~= 0)
+            S(x,y) = 1/D(x,y);
         end
-        T = -1 * L - U;
+        y = y+1;
+    end
+    T = -1 * L - U;
+    while ((delta > tol) && (its <= 100))
         oldxn = xn;
         %xn = matrix_mult(S, matrix_mult(T, xn)) + matrix_mult(S, b);
         xn = S* (T *xn) + S* b;

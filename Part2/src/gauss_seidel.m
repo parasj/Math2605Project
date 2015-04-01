@@ -6,10 +6,12 @@ function [its, sol] = gauss_seidel(Ab, x0, tol)
 
     delta = Inf;
     xn = x0;
+    
+    [L, D, U] = LDU(A);
+    S = L + D;
+    T = -1 * U;
+    
     while ((delta > tol) && (its <= 100))
-        [L, D, U] = LDU(A);
-        S = L + D;
-        T = -1 * U;
         oldxn = xn;
         xn = solve_forward_sub(S, (matrix_mult(T, xn) + b));
         delta = normInf(xn - oldxn);

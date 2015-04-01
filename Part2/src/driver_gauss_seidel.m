@@ -1,7 +1,7 @@
 [filename, pathname] = uigetfile('*.dat', 'Gauss Seidel: Select an n x (n + 1) matrix to load');
 fileloc = strcat(pathname, filename);
 A = importdata(fileloc);
-[filename2, pathname2] = uigetfile('*.dat', 'Gauss Seidel: Select an n x 1 vector to load');
+[filename2, pathname2] = uigetfile('*.dat', 'Gauss Seidel: Select an n x 1 vector to load for x0');
 fileloc2 = strcat(pathname2, filename2);
 vec = importdata(fileloc2);
 input = inputdlg('Enter tol, the tolerance of the Gauss Seidel method', 'Tolerance');
