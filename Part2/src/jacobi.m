@@ -1,5 +1,6 @@
-function [its, sol] = jacobi(A, x0, tol)
-    b = A(:,end);
+function [its, sol] = jacobi(Ab, x0, tol)
+    b = Ab(:,end);
+    A = Ab;
     A(:,end) = [];
     [~, col] = size(A);
     its = 0;

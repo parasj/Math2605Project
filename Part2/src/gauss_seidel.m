@@ -1,5 +1,6 @@
-function [its, sol] = gauss_seidel(A, x0, tol)
-    b = A(:,end);
+function [its, sol] = gauss_seidel(Ab, x0, tol)
+    b = Ab(:,end);
+    A = Ab;
     A(:,end) = [];
     its = 0;
 
