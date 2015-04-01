@@ -4,6 +4,7 @@ A = importdata(fileloc);
 [filename2, pathname2] = uigetfile('*.dat', 'Gauss Seidel: Select an n x 1 vector to load for x0');
 fileloc2 = strcat(pathname2, filename2);
 vec = importdata(fileloc2);
+vec = vec';
 input = inputdlg('Enter tol, the tolerance of the Gauss Seidel method', 'Tolerance');
 tol = str2num(input{1});
 
@@ -17,4 +18,4 @@ if (m2 ~= m)
     error('Incorrect dimensions for initial vector');
 end
 
-[iterations, solution] =  gauss_seidel(A, vec, tol);
+[iterations, solution] =  gauss_seidel(A, vec, tol)
