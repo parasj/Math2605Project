@@ -11,6 +11,4 @@ function [ x, dQR, dA ] = solve_qr_b( Ab )
         case 'Householders'
             [ x, dQR, dA] = solve_qr_b_househ(A, b);
     end
-    
-    %     key = input('Solve using householder or givens? enter 1 for householders, 2 for givens and then press enter:\n');
 end
