@@ -1,8 +1,7 @@
 Part 3 Readme
 
 This part includes a function power_method that takes in a square matrix, a tolerance, and an initial vector and performs power iteration up to 100 times to 
-output the approximated eigenvalue and eigenvector as well as the number of iterations it took. If the iterations didn't converge to the tolerance within 100
- itterations the function errors out.
+output the approximated eigenvalue and eigenvector as well as the number of iterations it took. If the iterations didn't converge to the tolerance within 100 iterations the function errors out.
 
 Included is a power_method_driver to act as a user end for running the power_method. Just run power_method_driver and select the .dat files for the desired
 matrix and the initial vector in that order. Then insert the desired tolerance for the itteration when prompted. The driver will run the power_method function for
