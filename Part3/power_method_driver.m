@@ -17,4 +17,4 @@ if (m2 ~= m)
     error('Incorrect dimensions for initial vector');
 end
 
-[eigenvalue, eigenvector, iterations] =  power_method(A, tol, vec);
+[eigenvalue, eigenvector, iterations] =  power_method(A, tol, vec)
