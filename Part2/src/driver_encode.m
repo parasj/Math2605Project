@@ -10,8 +10,3 @@ y1 = mod(matrix_mult(a1, x_0'), 2);
 y = create_encoded_word(y0, y1);
 
 h = msgbox({strcat('x: ', mat2str(x)), '',strcat('y: ', mat2str(y))}, 'Encoding Driver');
-
-
-fileID = fopen('y.dat','w');
-fprintf(fileID, '%d ', y);
-fclose(fileID);

@@ -32,4 +32,6 @@ if (x0 ~= x1)
 end
 
 x0 = mod(x0, 2);
-x = x0(1 : end - 3)'
+x = x0(1 : end - 3)';
+
+h = msgbox(strcat('x: ', mat2str(x)), 'Decode Driver');
