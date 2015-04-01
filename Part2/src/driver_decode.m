@@ -27,9 +27,6 @@ switch key
         [iter1, x1] = gauss_seidel([a1 y_1], zeros(n, 1), .2);
 end
 
-iter0
-iter1
-
 if (x0 ~= x1)
     error('X0 != X1 - some error occurred');
 end
