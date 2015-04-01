@@ -5,31 +5,34 @@ y = importdata(fileloc);
 [~, n] = size(y);
 
 [y0, y1]   = decode_word(y);
-[a0, a1]   = create_transformation_matrix(n);
+[a0, a1]   = create_transformation_matrix(n - 3);
 
 
 key = questdlg( 'Which method should be to solve Ax=b?', 'Decode', 'Jacobi', 'Gauss-Seidel', 'Gauss-Seidel');
  
-y_0 = [y0 0 0 0]';
-y_1 = [y1 0 0 0]';
+y_0 = y0';
+y_1 = y1';
 
 switch key
     case 'Jacobi'
         % a0 * x0 = y0
-        [iter0, x0] = jacobi([a0 y_0], zeros(n + 3, 1), .2);
+        [iter0, x0] = jacobi([a0 y_0], zeros(n, 1), .2);
         % a1 * x1 = y1
-        [iter1, x1] = jacobi([a1 y_1], zeros(n + 3, 1), .2);
+        [iter1, x1] = jacobi([a1 y_1], zeros(n, 1), .2);
         
     case 'Gauss-Seidel'
         % a0 * x0 = y0
-        [iter0, x0] = gauss_seidel([a0 y_0], zeros(n + 3, 1), .2);
+        [iter0, x0] = gauss_seidel([a0 y_0], zeros(n, 1), .2);
         % a1 * x1 = y1
-        [iter1, x1] = gauss_seidel([a1 y_1], zeros(n + 3, 1), .2);
+        [iter1, x1] = gauss_seidel([a1 y_1], zeros(n, 1), .2);
 end
+
+iter0
+iter1
 
 if (x0 ~= x1)
     error('X0 != X1 - some error occurred');
 end
 
 x0 = mod(x0, 2);
-x = x0(1 : end - 6)'
+x = x0(1 : end - 3)'

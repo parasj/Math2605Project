@@ -30,4 +30,3 @@ function [its, sol] = jacobi(Ab, x0, tol)
        error('Did not converge in 100 iterations');
     end
 end
-
