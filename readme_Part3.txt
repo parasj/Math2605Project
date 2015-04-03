@@ -1,3 +1,9 @@
+ANY VECTOR .dat FILES SHOULD BE INPUTTED AS VERTICAL VECTORS (n x 1).
+    Ex. 1
+        2
+        3
+        4
+
 Part 3 Readme
 
 This part includes a function power_method that takes in a square matrix, a tolerance, and an initial vector and performs power iteration up to 100 times to output the approximated eigenvalue and eigenvector as well as the number of iterations it took. If the iterations didn't converge to the tolerance within 100 iterations the function errors out.

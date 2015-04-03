@@ -1,3 +1,8 @@
+ANY VECTOR .dat FILES SHOULD BE INPUTTED AS TRANSPOSE VECTORS (1 x n).
+    Ex. 1 2 3 4
+
+Part 1 Readme
+
 1. lu_fact:
 	To test the lu_fact, run driver_lu_fact in the Matlab shell.
 
